@@ -13,9 +13,7 @@ def home(request):
         created_obj = TODOModel.objects.create(date_pub=pub_date, text=content)
         return redirect('home')
     else:
-        #return HttpResponseRedirect("")
         todolist=TODOModel.objects.all().order_by("-date_pub")
-    #return HttpResponse("hello")
     context={
         'todolist':todolist
     }
